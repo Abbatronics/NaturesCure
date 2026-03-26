@@ -1,0 +1,21 @@
+<!-- payment-success.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment Processing</title>
+</head>
+<body>
+    <h2>Processing your payment...</h2>
+    <p>Please wait while we verify your payment.</p>
+    
+    <script>
+        // Redirect back to main page with reference
+        const urlParams = new URLSearchParams(window.location.search);
+        const reference = urlParams.get('reference');
+        
+        if (reference) {
+            window.location.href = `index.html?payment_verified=${reference}`;
+        }
+    </script>
+</body>
+</html>
